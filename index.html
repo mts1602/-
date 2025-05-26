@@ -73,12 +73,12 @@
 
 
   <!-- Email services -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript">
     (function() {
       emailjs.init("pkPgxnI7k7vISAlNz");
     })();
-</script>
+</script> -->
 
 
     
@@ -95,6 +95,14 @@
 
 <!-- SweetAlert2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("pkPgxnI7k7vISAlNz"); // Replace with your EmailJS Public Key
+  })();
+</script>
+
 
 
 
@@ -500,6 +508,11 @@
                     >GenAI Solutions</a
                   >
                 </li>
+                <li>
+                  <a class="nav-link" data-bs-toggle="pill" href="#tab5"
+                    >Digital Marketing</a
+                  >
+                </li>
               </ul>
               <!-- End Tabs -->
 
@@ -588,6 +601,27 @@
                   </p>
                 </div>
                 <!-- End Tab 4 Content -->
+
+                <div class="tab-pane fade show" id="tab5">
+                  <p>
+                    At MOFUSA Tech Solutions, we deliver strategic digital marketing services to boost your brand visibility and drive business growth.
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-check2"></i>
+                    <h4>SEO, Social Media & Content Strategy</h4>
+                  </div>
+                  <p>
+                    We enhance your online presence through effective SEO, engaging social media campaigns, and impactful content marketing. Our tailored strategies help attract, engage, and retain your target audience across platforms.
+                  </p>
+                  <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-check2"></i>
+                    <h4>Paid Ads & Performance Tracking</h4>
+                  </div>
+                  <p>
+                    Maximize ROI with targeted PPC campaigns on Google and social media. We provide real-time analytics and transparent reporting to measure success and continuously optimize performance.
+                  </p>
+                </div>
+                <!-- End Tab 5 Content -->
               </div>
             </div>
 
@@ -1679,6 +1713,7 @@
                 action="javascript:void(0);"
                 method="post"
                 class="php-email-form"
+                id="contact-form"
               >
                 <div class="row gy-4">
                   <div class="col-md-6">
@@ -1847,64 +1882,6 @@
 
       <div class="container">
         <div class="copyright">&copy 2025 MOFUSA Tech Solutions. All Rights Reserved.</div>
-        <!-- <div class="credits">
-           Designed & Developed By
-          <a href="https://furquan.tech" target="_blank">Mohammed Furquan Saleem</a>
-        </div> -->
-      </div>
-    </footer>
-    <!-- <div
-      class="modal fade"
-      id="cart"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              <center><b>My Cart</b></center>
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <table class="show-cart table"></table>
-            <div>
-              Total price: ₹<b
-                ><span class="total-cart" id="totalamound"></span
-              ></b>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button class="clear-cart btn btn-danger" id="clearcart">
-              Clear Cart
-            </button>
-            <a href="orderitem.html"
-              ><button type="button" class="btn btn-primary" id="ordernow">
-                Make Order
-              </button></a
-            >
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End Footer -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -1944,6 +1921,49 @@
         localStorage.setItem("totalnumber", totalnumber);
       };
     </script>
+
+  <script>
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Show loading animation
+      document.querySelector(".loading").style.display = "block";
+
+      emailjs
+        .sendForm("service_92zx66z", "template_mvcsftd", this)
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+
+            document.querySelector(".loading").style.display = "none";
+            document.querySelector(".sent-message").style.display = "block";
+            document.querySelector(".error-message").style.display = "none";
+
+            swal("Success!", "Your message has been sent.", "success");
+
+            document.getElementById("contact-form").reset();
+          },
+          function (error) {
+            // Use SweetAlert2 for a beautiful error alert
+            console.log(error);
+            Swal.fire({
+              icon: "error",
+              title: "Error sending demo request. Try again after sometime",
+              showConfirmButton: false,
+              timer: 3000,
+              customClass: {
+                popup: 'custom-swal-popup',
+              },
+            });
+          }
+        );
+    });
+</script>
+
+
+
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
     <!-- <script>

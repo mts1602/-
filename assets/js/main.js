@@ -296,52 +296,52 @@
 Demo Form Submission - Mail 
 */
  
-function demoForm() {
-  var params = {
-    fullname: document.getElementById("fname").value,
-    email: document.getElementById("email").value,
-    phoneNumber: document.getElementById("adr").value,
-    requirements: document.getElementById("city").value,
-    businessName: document.getElementById("cname").value,
-    companyType: document.getElementById("ccnum").value,
-    cooperationType: document.getElementById("expmonth").value,
-    chooseDay: document.getElementById("daySelect").value,
-    time: document.getElementById("cvv").value,
-    officeNumber: document.getElementById("expyear").value,
-    location: document.getElementById("loc").value
-};
+// function demoForm() {
+//   var params = {
+//     fullname: document.getElementById("fname").value,
+//     email: document.getElementById("email").value,
+//     phoneNumber: document.getElementById("adr").value,
+//     requirements: document.getElementById("city").value,
+//     businessName: document.getElementById("cname").value,
+//     companyType: document.getElementById("ccnum").value,
+//     cooperationType: document.getElementById("expmonth").value,
+//     chooseDay: document.getElementById("daySelect").value,
+//     time: document.getElementById("cvv").value,
+//     officeNumber: document.getElementById("expyear").value,
+//     location: document.getElementById("loc").value
+// };
 
-  var serviceID = "service_c6mqcij";
-  var templateID = "template_u6vdwam";
+//   var serviceID = "service_c6mqcij";
+//   var templateID = "template_u6vdwam";
 
-  emailjs.send(serviceID, templateID, params).then(
-    function (res) {
-      // Use SweetAlert2 for a beautiful success alert
-      Swal.fire({
-        icon: "success",
-        title: "Demo Request Sent Successfully",
-        showConfirmButton: false,
-        timer: 3000, // Automatically close after 2 seconds
-        customClass: {
-          popup: 'custom-swal-popup', // Add a custom class for styling
-        },
-      });
-    },
-    function (error) {
-      // Use SweetAlert2 for a beautiful error alert
-      console.log(error)
-      Swal.fire({
-        icon: "error",
-        title: "Error sending demo request. Try again after sometime",
-        showConfirmButton: false,
-        timer: 3000, // Automatically close after 2 seconds
-        customClass: {
-          popup: 'custom-swal-popup', // Add a custom class for styling
-        },
-      });
-    } 
-  );
-}
+//   emailjs.send(serviceID, templateID, params).then(
+//     function (res) {
+//       // Use SweetAlert2 for a beautiful success alert
+//       Swal.fire({
+//         icon: "success",
+//         title: "Demo Request Sent Successfully",
+//         showConfirmButton: false,
+//         timer: 3000, // Automatically close after 2 seconds
+//         customClass: {
+//           popup: 'custom-swal-popup', // Add a custom class for styling
+//         },
+//       });
+//     },
+//     function (error) {
+//       // Use SweetAlert2 for a beautiful error alert
+//       console.log(error)
+//       Swal.fire({
+//         icon: "error",
+//         title: "Error sending demo request. Try again after sometime",
+//         showConfirmButton: false,
+//         timer: 3000, // Automatically close after 2 seconds
+//         customClass: {
+//           popup: 'custom-swal-popup', // Add a custom class for styling
+//         },
+//       });
+//     } 
+//   );
+// }
 
 
 
@@ -350,41 +350,41 @@ function demoForm() {
 Form SUbmission -Mail 
 */
 
-function sendMail() {
-  var params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.getElementById("message").value,
-  };
+// function sendMail() {
+//   var params = {
+//     name: document.getElementById("name").value,
+//     email: document.getElementById("email").value,
+//     subject: document.getElementById("subject").value,
+//     message: document.getElementById("message").value,
+//   };
 
-  var serviceID = "service_3kqfcxg";
-  var templateID = "template_mvcsftd";
+//   var serviceID = "service_3kqfcxg";
+//   var templateID = "template_mvcsftd";
 
-  emailjs.send(serviceID, templateID, params).then(
-    function (res) {
-      // Use SweetAlert2 for a beautiful success alert
-      Swal.fire({
-        icon: "success",
-        title: "Message Sent Successfully",
-        showConfirmButton: false,
-        timer: 3000, // Automatically close after 2 seconds
-        customClass: {
-          popup: 'custom-swal-popup', // Add a custom class for styling
-        },
-      });
-    },
-    function (error) {
-      // Use SweetAlert2 for a beautiful error alert
-      Swal.fire({
-        icon: "error",
-        title: "Error sending message. Try again after sometime",
-        showConfirmButton: false,
-        timer: 3000, // Automatically close after 2 seconds
-        customClass: {
-          popup: 'custom-swal-popup', // Add a custom class for styling
-        },
-      });
-    } 
-  );
-}
+//   emailjs.send(serviceID, templateID, params).then(
+//     function (res) {
+//       // Use SweetAlert2 for a beautiful success alert
+//       Swal.fire({
+//         icon: "success",
+//         title: "Message Sent Successfully",
+//         showConfirmButton: false,
+//         timer: 3000, // Automatically close after 2 seconds
+//         customClass: {
+//           popup: 'custom-swal-popup', // Add a custom class for styling
+//         },
+//       });
+//     },
+//     function (error) {
+//       // Use SweetAlert2 for a beautiful error alert
+//       Swal.fire({
+//         icon: "error",
+//         title: "Error sending message. Try again after sometime",
+//         showConfirmButton: false,
+//         timer: 3000, // Automatically close after 2 seconds
+//         customClass: {
+//           popup: 'custom-swal-popup', // Add a custom class for styling
+//         },
+//       });
+//     } 
+//   );
+// }
